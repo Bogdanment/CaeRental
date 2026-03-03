@@ -1,0 +1,11 @@
+{$DOMAIN} {
+  email {$ACME_EMAIL}
+  encode gzip zstd
+
+  reverse_proxy /api/* backend:3000
+  reverse_proxy /uploads/* backend:3000
+
+  root * /srv
+  try_files {path} /index.html
+  file_server
+}
