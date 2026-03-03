@@ -1,5 +1,8 @@
-{$DOMAIN} {
+{
   email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
   encode gzip zstd
 
   reverse_proxy /api/* backend:3000
